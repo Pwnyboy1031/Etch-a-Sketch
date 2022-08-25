@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.body.onmouseup = () => (mouseDown = false);
     const btnSize = document.querySelector("#btnSize");
     const btnEraser = document.querySelector("#btnEraser");
-    const btnRainbow = document.querySelector("#btnRainbow");
+    const btnDraw = document.querySelector("#btnDraw");
     createCanvas();
 
     function changeCanvasSize(input) {
@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
         drawColor = "antiquewhite";
     })
 
-    btnRainbow.addEventListener("click", (e) => {
-        drawColor = Math.floor(Math.random()*16777215).toString(16);
+    btnDraw.addEventListener("click", (e) => {
+        drawColor = "black";
     })
 
 
