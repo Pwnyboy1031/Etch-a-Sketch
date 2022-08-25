@@ -59,6 +59,10 @@ h1 {
     background-color: black;
 }
 
+.erased {
+    background-color: antiquewhite;
+}
+
 #gameWindow {
     display: flex;
     flex-direction: row;

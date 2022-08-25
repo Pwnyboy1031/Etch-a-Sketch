@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", (e) => {
-    let size = 40;
+    let size = 16;
     let rows = [];
+    let drawColor = "black"
     const canvas = document.getElementById("sketchContainer");
     mouseDown = false;
     document.body.onmousedown = () => (mouseDown = true);
     document.body.onmouseup = () => (mouseDown = false);
     const btnSize = document.querySelector("#btnSize");
+    const btnEraser = document.querySelector("#btnEraser");
+    const btnRainbow = document.querySelector("#btnRainbow");
     createCanvas();
 
     function changeCanvasSize(input) {
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.addEventListener("mouseover", (e) => {
         if (e.target.className == "sketchGrid") {
             if (e.type == "mouseover" && mouseDown) {
-                e.target.classList.add("written");
+                e.target.style.backgroundColor = drawColor;
             }
 
         }
@@ -55,7 +58,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     document.addEventListener("click", (e) => {
         if (e.target.className == "sketchGrid") {
             if (e.type == "click") {
-                e.target.classList.add("written");
+                e.target.style.backgroundColor = drawColor;
             }
         }
     })
@@ -66,6 +69,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
             input = 100;
         }
         changeCanvasSize(input);
+    })
+
+    btnEraser.addEventListener("click", (e) => {
+        drawColor = "antiquewhite";
+    })
+
+    btnRainbow.addEventListener("click", (e) => {
+        drawColor = Math.floor(Math.random()*16777215).toString(16);
     })
 
 
